@@ -1,0 +1,49 @@
+mutation {
+  addClient(name:"cc", email:"c@g.com", phone:"2345454"){
+    id,
+    name,
+    email
+  }
+}
+
+mutation {
+  deleteClient(id:"651ba4b4335be5361c115c94"){
+    name,
+    email
+  }
+}
+
+# get all clients
+{
+  clients {
+    name
+    email
+    phone
+  }
+}
+
+# add project
+mutation{
+  addProject(name:"new", description:"desc",status:new, clientId:"651ba405c69b0a423d66e9f0"){
+    name
+    status,
+    client{
+      name
+    }
+  }
+}
+
+{
+  projects{
+    name,
+    client{
+      name
+    }
+  }
+}
+
+mutation{
+  deleteProject(id:"651baa68335be5361c115c9d"){
+    name
+  }
+}
